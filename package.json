@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-android-selfupdate",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Cordova plugin for self-updating an Android APK",
   "main": "www/index.js",
   "dependencies": {},

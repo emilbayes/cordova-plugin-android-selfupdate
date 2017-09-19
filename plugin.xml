@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-android-selfupdate"
-        version="1.0.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-android-selfupdate" version="0.1.0">
   <name>cordova-plugin-android-selfupdate</name>
-  <description>Cordova plugin for self-updating an app</description>
-  <author>Emil Bay</author>
-  <keywords></keywords>
+  <description>Cordova plugin for self-updating an Android APK</description>
+  <author email="github@tixz.dk">Emil Bay</author>
+  <keywords>cordova,android,selfupdate,update,relaunch</keywords>
   <license>ISC</license>
   <repo>git+https://github.com/emilbayes/cordova-plugin-android-selfupdate.git</repo>
   <issue>https://github.com/emilbayes/cordova-plugin-android-selfupdate/issues</issue>
   <platform name="android">
     <js-module src="www/index.js" name="SelfUpdate">
-        <runs />
+        <runs/>
     </js-module>
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="SelfUpdate">
-        <param name="android-package" value="com.github.emilbayes.selfupdate.SelfUpdate" />
-        <param name="onload" value="true" />
+        <param name="android-package" value="com.github.emilbayes.selfupdate.SelfUpdate"/>
+        <param name="onload" value="true"/>
       </feature>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <receiver android:name="com.github.emilbayes.selfupdate.UpdateReceiver">
         <intent-filter>
-          <action android:name="android.intent.action.PACKAGE_ADDED" />
-          <action android:name="android.intent.action.PACKAGE_REMOVED" />
+          <action android:name="android.intent.action.PACKAGE_ADDED"/>
+          <action android:name="android.intent.action.PACKAGE_REMOVED"/>
           <data android:scheme="package"/>
         </intent-filter>
       </receiver>
     </config-file>
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
-      <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED" />
+      <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/>
     </config-file>
 
-    <source-file src="src/com/github/emilbayes/selfupdate/UpdateReceiver.java" target-dir="src/com/github/emilbayes/selfupdate" />
-    <source-file src="src/com/github/emilbayes/selfupdate/SelfUpdate.java" target-dir="src/com/github/emilbayes/selfupdate" />
+    <source-file src="src/com/github/emilbayes/selfupdate/UpdateReceiver.java" target-dir="src/com/github/emilbayes/selfupdate"/>
+    <source-file src="src/com/github/emilbayes/selfupdate/SelfUpdate.java" target-dir="src/com/github/emilbayes/selfupdate"/>
   </platform>
 </plugin>

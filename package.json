@@ -1,0 +1,36 @@
+{
+  "name": "cordova-plugin-android-selfupdate",
+  "version": "0.0.0",
+  "description": "Cordova plugin for self-updating an Android APK",
+  "main": "www/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "sync-cordova-xml": "^0.2.2"
+  },
+  "scripts": {
+    "version": "sync-cordova-xml --plugin package.json plugin.xml --output=plugin.xml && git add plugin.xml"
+  },
+  "cordova": {
+    "id": "cordova-plugin-android-selfupdate",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilbayes/cordova-plugin-android-selfupdate.git"
+  },
+  "keywords": [
+    "cordova",
+    "android",
+    "selfupdate",
+    "update",
+    "relaunch"
+  ],
+  "author": "Emil Bay <github@tixz.dk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilbayes/cordova-plugin-android-selfupdate/issues"
+  },
+  "homepage": "https://github.com/emilbayes/cordova-plugin-android-selfupdate#readme"
+}

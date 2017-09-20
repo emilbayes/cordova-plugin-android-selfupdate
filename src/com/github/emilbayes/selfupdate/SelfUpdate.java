@@ -9,6 +9,7 @@ import org.json.JSONException;
 
 import android.content.Intent;
 import android.net.Uri;
+import java.io.File;
 
 public class SelfUpdate extends CordovaPlugin {
     @Override
@@ -19,7 +20,7 @@ public class SelfUpdate extends CordovaPlugin {
                 return false;
             }
 
-            Uri uri = Uri.parse(args.getString(0));
+            Uri uri = Uri.fromFile(new File(args.getString(0)));
 
             Intent openIntent = new Intent(Intent.ACTION_VIEW, uri);
             openIntent.setDataAndType(uri, "application/vnd.android.package-archive");

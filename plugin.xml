@@ -18,7 +18,7 @@
       </feature>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <receiver android:name="com.github.emilbayes.selfupdate.UpdateReceiver">
+      <receiver android:exported="true" android:name="com.github.emilbayes.selfupdate.UpdateReceiver">
         <intent-filter>
           <action android:name="android.intent.action.PACKAGE_ADDED"/>
           <action android:name="android.intent.action.PACKAGE_REMOVED"/>
